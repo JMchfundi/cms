@@ -475,8 +475,8 @@
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box white-bg">
-              <i class="fa fa-money" style="color: red"></i>
-              <div class="title">Expenses</div>
+              <i class="fa fa-money" style="color: red; "></i>
+              <div class="title">Earnings</div>
                 <div class="count" >100426</div>
             </div>
             <!--/.info-box-->
@@ -492,7 +492,7 @@
 
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h2><i class="fa fa-map-marker red"></i><strong>Countries</strong></h2>
+                <h2><i class="fa fa-map-marker red"></i><strong>Earnings</strong></h2>
                 <div class="panel-actions">
                   <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
                   <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
@@ -500,12 +500,14 @@
                 </div>
               </div>
               <div class="panel-body-map">
-                <div id="map" style="height:380px;"></div>
+                <!--<div id="map" style="height:380px;"></div>-->
+                  <canvas id="lineChart" style="height: 380px"></canvas>
               </div>
 
             </div>
           </div>
           <div class="col-md-3">
+              <span class="" style="color: black; font-weight: bold; font-size: 24px; font-family: Sans-Serif">Website Traffic</span>
             <!-- List starts -->
             <ul class="today-datas">
               <!-- List #1 -->
@@ -554,12 +556,13 @@
                   <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
                 </div>
               </div>
+
               <div class="panel-body">
                 <table class="table bootstrap-datatable countries">
                   <thead>
                     <tr>
                       <th></th>
-                      <th>Country</th>
+                      <th>County</th>
                       <th>Users</th>
                       <th>Online</th>
                       <th>Performance</th>
@@ -567,8 +570,8 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Germany</td>
+                        <td><strong>#001<!--<img src="img/Germany.png" style="height:18px; margin-top:-2px;">--></strong></td>
+                      <td>Mombasa</td>
                       <td>2563</td>
                       <td>1025</td>
                       <td>
@@ -582,8 +585,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/India.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>India</td>
+                        <td><strong>#047<!--<img src="img/India.png" style="height:18px; margin-top:-2px;">--></strong></td>
+                      <td>Nairobi</td>
                       <td>3652</td>
                       <td>2563</td>
                       <td>
@@ -597,8 +600,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Spain</td>
+                        <td><strong>#042<!--<img src="img/Spain.png" style="height:18px; margin-top:-2px;">--></strong></td>
+                      <td>Kisumu</td>
                       <td>562</td>
                       <td>452</td>
                       <td>
@@ -612,8 +615,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/India.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Russia</td>
+                        <td><strong>#034<!--<img src="img/India.png" style="height:18px; margin-top:-2px;">--></strong></td>
+                      <td>Kajiado</td>
                       <td>1258</td>
                       <td>958</td>
                       <td>
@@ -627,8 +630,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>USA</td>
+                        <td><strong>#002<!--<img src="img/Spain.png" style="height:18px; margin-top:-2px;">--></strong></td>
+                      <td>Kwale</td>
                       <td>4856</td>
                       <td>3621</td>
                       <td>
@@ -642,8 +645,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Brazil</td>
+                        <td><strong>#005<!--<img src="img/Germany.png" style="height:18px; margin-top:-2px;">--></strong></td>
+                      <td>Lamu</td>
                       <td>265</td>
                       <td>102</td>
                       <td>
@@ -657,8 +660,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Coloumbia</td>
+                        <td><strong>#016</strong></td>
+                      <td>Machakos</td>
                       <td>265</td>
                       <td>102</td>
                       <td>
@@ -672,8 +675,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>France</td>
+                        <td><strong>#003<!--<img src="img/Germany.png" style="height:18px; margin-top:-2px;">--></strong></td>
+                      <td>Kilifi</td>
                       <td>265</td>
                       <td>102</td>
                       <td>
@@ -694,9 +697,30 @@
 
           </div>
           <!--/col-->
-          <div class="col-md-3">
+          <!--<div class="col-md-3 white-bg">-->
+              <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                  <!--<div class="panel-body white-bg" style="height: 582px; border-style: solid;
+                   border-width: 1px 1px 1px; border-top: none; border-right-color: #ccc!important;
+                   border-bottom-color: #ccc!important; border-left-color: #ccc!important;">
+                      <div>
+                          <h2><strong>Expenses</strong></h2>
+                      </div>-->
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h2><strong>Expenses</strong></h2>
+                          <div class="panel-actions">
+                              <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+                              <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                              <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+                          </div>
+                      </div>
+                      <div class="panel-body white-bg" style="height: 544px; border-style: solid;
+                   border-width: 1px 1px 1px; border-top: none; border-right-color: #ccc!important;
+                   border-bottom-color: #ccc!important; border-left-color: #ccc!important;"></div>
+                  </div>
 
-            <div class="social-box facebook">
+
+            <!--<div class="social-box facebook">
               <i class="fa fa-facebook"></i>
               <ul>
                 <li>
@@ -709,7 +733,7 @@
                 </li>
               </ul>
             </div>
-            <!--/social-box-->
+            &lt;!&ndash;/social-box&ndash;&gt;
           </div>
           <div class="col-md-3">
 
@@ -726,10 +750,10 @@
                 </li>
               </ul>
             </div>
-            <!--/social-box-->
+            &lt;!&ndash;/social-box&ndash;&gt;
 
           </div>
-          <!--/col-->
+          &lt;!&ndash;/col&ndash;&gt;
           <div class="col-md-3">
 
             <div class="social-box twitter">
@@ -743,8 +767,8 @@
                   <strong>2562</strong>
                   <span>tweets</span>
                 </li>
-              </ul>
-            </div>
+              </ul>-->
+           <!-- </div>-->
             <!--/social-box-->
 
           </div>
@@ -789,7 +813,7 @@
                       <div class="chat-content">
                         <!-- In meta area, first include "name" and then "time" -->
                         <div class="chat-meta">John Smith <span class="pull-right">3 hours ago</span></div>
-                        Vivamus diam elit diam, consectetur dapibus adipiscing elit.
+                        Hey Jenifer, do you have a busy schedule tomorrow?
                         <div class="clearfix"></div>
                       </div>
                     </li>
@@ -804,7 +828,7 @@
                       <div class="chat-content">
                         <!-- In the chat meta, first include "time" then "name" -->
                         <div class="chat-meta">3 hours ago <span class="pull-right">Jenifer Smith</span></div>
-                        Vivamus diam elit diam, consectetur fconsectetur dapibus adipiscing elit.
+                        Hey John, Not really. Whats up?
                         <div class="clearfix"></div>
                       </div>
                     </li>
@@ -816,7 +840,7 @@
 
                       <div class="chat-content">
                         <div class="chat-meta">John Smith <span class="pull-right">4 hours ago</span></div>
-                        Vivamus diam elit diam, consectetur fermentum sed dapibus eget, Vivamus consectetur dapibus adipiscing elit.
+                        Will you help me giving Maths test to Form 4's?
                         <div class="clearfix"></div>
                       </div>
                     </li>
@@ -830,7 +854,7 @@
                       <div class="chat-content">
                         <!-- In the chat meta, first include "time" then "name" -->
                         <div class="chat-meta">3 hours ago <span class="pull-right">Jenifer Smith</span></div>
-                        Vivamus diam elit diam, consectetur fermentum sed dapibus eget, Vivamus consectetur dapibus adipiscing elit.
+                        Yeah sure.
                         <div class="clearfix"></div>
                       </div>
                     </li>
@@ -877,7 +901,7 @@
                   <tr>
                     <td>Today</td>
                     <td>
-                      web design
+                      Posting of Form 1 East Maths test results
                     </td>
                     <td>
                       <span class="badge bg-important">Upload</span>
@@ -891,7 +915,7 @@
                   <tr>
                     <td>Yesterday</td>
                     <td>
-                      Project Design Task
+                      Giving Maths test to Form 1 East
                     </td>
                     <td>
                       <span class="badge bg-success">Task</span>
@@ -903,7 +927,7 @@
                   <tr>
                     <td>21-10-14</td>
                     <td>
-                      Generate Invoice
+                      Biology class for Form 4 West
                     </td>
                     <td>
                       <span class="badge bg-success">Task</span>
@@ -915,7 +939,7 @@
                   <tr>
                     <td>22-10-14</td>
                     <td>
-                      Project Testing
+                      Chemistry practicals Form 3 South
                     </td>
                     <td>
                       <span class="badge bg-primary">To-Do</span>
@@ -929,7 +953,7 @@
                   <tr>
                     <td>24-10-14</td>
                     <td>
-                      Project Release Date
+                      Geography trip to Gede Ruins
                     </td>
                     <td>
                       <span class="badge bg-info">Milestone</span>
@@ -938,10 +962,10 @@
                       <div id="work-progress4"></div>
                     </td>
                   </tr>
-                  <tr>
+                  <!--<tr>
                     <td>28-10-14</td>
                     <td>
-                      Project Release Date
+                      English lesson Form 2 North
                     </td>
                     <td>
                       <span class="badge bg-primary">To-Do</span>
@@ -949,11 +973,11 @@
                     <td>
                       <div id="work-progress5"></div>
                     </td>
-                  </tr>
+                  </tr>-->
                   <tr>
                     <td>Last week</td>
                     <td>
-                      Project Release Date
+                      Results for English test release
                     </td>
                     <td>
                       <span class="badge bg-primary">To-Do</span>
@@ -965,7 +989,7 @@
                   <tr>
                     <td>last month</td>
                     <td>
-                      Project Release Date
+                      Mathematics contest for Form 4
                     </td>
                     <td>
                       <span class="badge bg-success">To-Do</span>
@@ -1072,6 +1096,7 @@
                 </div>
                 <div class="widget-foot">
                   <!-- Footer goes here -->
+
                 </div>
               </div>
             </div>
@@ -1082,7 +1107,53 @@
         <!-- project team & activity end -->
 
       </section>
-      <div class="text-right">
+        <div class="social-footer">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 social-box facebook">
+                <i class="fa fa-facebook"></i>
+
+                <!--/.info-box-->
+            </div>
+            <!--<div class="social-box facebook">
+              <i class="fa fa-facebook"></i>
+              <ul>
+                <li>
+                  <strong>256k</strong>
+                  <span>friends</span>
+                </li>
+                <li>
+                  <strong>359</strong>
+                  <span>feeds</span>
+                </li>
+              </ul>
+            </div>
+            &lt;!&ndash;/social-box&ndash;&gt;
+          </div>
+          <div class="col-md-3">
+
+            <!--/.col-->
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 social-box google-plus">
+                <i class="fa fa-google-plus"></i>
+                <!--/.info-box-->
+            </div>
+            <!--/.col-->
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 social-box twitter">
+                <i class="fa fa-twitter"></i>
+                    <!--/.info-box-->
+            </div>
+            <!--/.col-->
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 social-box linkedin">
+                <i class="fa fa-linkedin"></i>
+                <!--/.info-box-->
+            </div>
+            <!--/.col-->
+
+        </div>
+        <!--/.row-->
+
+        <div class="text-right">
         <div class="credits">
           <!--
             All the links in the footer should remain intact.
@@ -1167,7 +1238,7 @@
       });
 
       /* ---------- Map ---------- */
-      $(function() {
+      /*$(function() {
         $('#map').vectorMap({
           map: 'world_mill_en',
           series: {
@@ -1182,6 +1253,41 @@
             el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
           }
         });
+      });*/
+
+      //lineChart
+      var ctxL = document.getElementById("lineChart").getContext('2d');
+      var myLineChart = new Chart(ctxL, {
+          type: 'line',
+          data: {
+              labels: ["January", "February", "March", "April", "May", "June", "July"],
+              datasets: [{
+                  label: "My First dataset",
+                  data: [65, 59, 80, 81, 56, 55, 40],
+                  backgroundColor: [
+                      'rgba(105, 0, 132, .2)',
+                  ],
+                  borderColor: [
+                      'rgba(200, 99, 132, .7)',
+                  ],
+                  borderWidth: 2
+              },
+                  {
+                      label: "My Second dataset",
+                      data: [28, 48, 40, 19, 86, 27, 90],
+                      backgroundColor: [
+                          'rgba(0, 137, 132, .2)',
+                      ],
+                      borderColor: [
+                          'rgba(0, 10, 130, .7)',
+                      ],
+                      borderWidth: 2
+                  }
+              ]
+          },
+          options: {
+              responsive: true
+          }
       });
     </script>
 
